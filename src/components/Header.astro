@@ -1,0 +1,100 @@
+---
+import { Icon } from "astro-icon/components";
+import "@fontsource/niconne";
+---
+
+<header
+    class="fixed w-full h-fit flex flex-col items-center pt-3 px-12 z-10 filter backdrop-blur-sm transition-colors"
+>
+    <div class="flex w-full justify-between items-center pb-2">
+        <nav class="flex flex-grow basis-0 items-center">
+            <button class="font-medium tracking-tight">
+                <Icon name="bars" size={40} color="#fff" />
+            </button>
+            <button>
+                <Icon name="magnifier" size={40} color="#fff" />
+            </button>
+        </nav>
+        <h1 class="text-white/95 text-4xl font-bold">Musicpro</h1>
+        <nav class="flex items-center gap-2 flex-grow basis-0 justify-end">
+            <span class="text-white/95 font-medium text-sm tracking-tight"
+                >SIGUENOS:
+            </span>
+            <a href="">
+                <Icon name="instagram" size={30} color="#fff" />
+            </a>
+            <a href="">
+                <Icon name="facebook" size={30} color="#fff" />
+            </a>
+        </nav>
+    </div>
+    <nav
+        class="flex items-end justify-center border-t pt-2 border-t-white/30 w-full gap-2 border-b border-b-white/30 pb-2"
+    >
+        <a
+            href=""
+            class="hover:text-white text-white/80 transition-colors font-normal text-sm tracking-tight"
+            >GUITARRAS ELECTRICAS</a
+        >
+        <span
+            class="hover:text-white text-white/80 transition-colors font-normal text-sm tracking-tight"
+            >|</span
+        >
+        <a
+            href=""
+            class="hover:text-white text-white/80 transition-colors font-normal text-sm tracking-tight"
+            >GUITARRAS ACUSTICAS</a
+        >
+        <span
+            class="hover:text-white text-white/80 transition-colors font-normal text-sm tracking-tight"
+            >|</span
+        >
+
+        <a
+            href=""
+            class="hover:text-white text-white/80 transition-colors font-normal text-sm tracking-tight"
+            >BAJOS</a
+        >
+        <span
+            class="hover:text-white text-white/80 transition-colors font-normal text-sm tracking-tight"
+            >|</span
+        >
+
+        <a
+            href=""
+            class="hover:text-white text-white/80 transition-colors font-normal text-sm tracking-tight"
+            >ELECTRONICA</a
+        >
+        <span
+            class="hover:text-white text-white/80 transition-colors font-normal text-sm tracking-tight"
+            >|</span
+        >
+
+        <a
+            href=""
+            class="hover:text-white text-white/70 transition-colors font-normal text-sm tracking-tight"
+            >ACCESORIOS</a
+        >
+    </nav>
+</header>
+
+<style>
+    button {
+        all: unset;
+    }
+
+    h1 {
+        font-family: "Niconne", cursive;
+    }
+</style>
+
+<script>
+    document.addEventListener("scroll", () => {
+        const header = document.querySelector("header");
+        if (window.scrollY >= 527) {
+            header.classList.add("bg-[#0a0a0a]/90");
+        } else {
+            header.classList.remove("bg-[#0a0a0a]/90");
+        }
+    });
+</script>

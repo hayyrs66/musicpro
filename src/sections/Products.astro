@@ -1,0 +1,118 @@
+---
+import { seriesDeGuitarra } from "src/constants";
+
+const chunkArray  = (array, size) => {
+    const chunks = [];
+    for(let i = 0; i < array.length; i += size) {
+        chunks.push(array.slice(i, i + size));
+    }
+    return chunks;
+}
+
+const groupedSeries = chunkArray(seriesDeGuitarra, 4);
+
+console.log(groupedSeries)
+
+
+---
+
+<section class="w-full h-full bg-[#0f0f0f] px-12 py-12">
+    <h2 class="gradient-text text-4xl font-bold tracking-tighter text-start">
+        Productos
+    </h2>
+    <nav class="inline-flex w-full gap-2 mt-4 [&>span]:text-white/80">
+        <button>Guitarras Electricas</button>
+        <span>|</span>
+        <button>Guitarras Acusticas</button>
+        <span>|</span>
+        <button>Bajos</button>
+        <span>|</span>
+        <button>Hollow Bodies</button>
+        <span>|</span>
+        <button>Electronica</button>
+        <span>|</span>
+        <button>Accesorios</button>
+    </nav>
+    <div class="swiper-body">
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                {
+                    seriesDeGuitarra.map((serie) => (
+                        <div class="swiper-slide">
+                            <div class="w-full h-full inline-flex gap-4 items-center">
+                                <article class="">
+                                    <h3 class="text-white text-3xl">
+                                        {serie.name}
+                                    </h3>
+                                </article>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </div>
+</section>
+
+<style>
+    button {
+        all: unset;
+        color: #ffff;
+        opacity: 0.7;
+        cursor: pointer;
+        font-size: 0.995rem;
+        transition-property: opacity;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+        letter-spacing: -0.02rem;
+    }
+
+    button:first-child {
+        opacity: 1;
+    }
+
+    button:hover {
+        opacity: 1;
+    }
+
+    .swiper-body {
+        position: relative;
+        height: 600px;
+    }
+    .swiper {
+        width: 100%;
+        height: 100%;
+    }
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .swiper-slide img {
+        display: block;
+        object-fit: cover;
+    }
+
+    .swiper-button-prev {
+        color: white;
+    }
+
+    .swiper-button-next {
+        color: white;
+    }
+
+    .gradient-text {
+        background: linear-gradient(180deg, #ffffff, #cacaca);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+</style>
+
+<script src="../libs/swiper.js"></script>

@@ -1,0 +1,16 @@
+---
+import Hero from '@sections/Hero.astro';
+import Layout from '../layouts/Layout.astro';
+import Sponsors from '@sections/Sponsors.astro';
+import Products from '@sections/Products.astro';
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<Hero />
+		<div class="w-full flex justify-center">
+			<Sponsors />
+		</div>
+		<Products />
+	</main>
+</Layout>
